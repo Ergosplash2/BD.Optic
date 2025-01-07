@@ -1,6 +1,6 @@
 import sqlite3
 
-# singleton : creation d'une instance de connection
+# singleton : 
 class Database:
     _instance = None
 
@@ -113,7 +113,7 @@ class Controller:
 
     def ajt_LUN(self, reference, marque, couleur, quantite, prix):
         self.model.ajt_LUN(reference, marque, couleur, quantite, prix)
-        self.view.printMSG("Lunette ajoutée avec succes!")
+        self.view.printMSG("Ajout enregistree")
 
     def voir_toutes_LUN(self):
         lunettes = self.model.recup_toutes_LUN()
@@ -121,7 +121,7 @@ class Controller:
 
     def sup_LUN(self, lunette_id):
         self.model.sup_LUN(lunette_id)
-        self.view.printMSG("Lunette supprimée avec succes!")
+        self.view.printMSG("Suppression enregistree")
 
     def rechercher_LUN(self, indice):
         lunettes = self.model.rechercher_LUN(indice)
@@ -140,10 +140,10 @@ class Controller:
         prix = float(prix) if prix else current_lunette[6]
 
         self.model.modif_LUN(lunette_id, reference, marque, couleur, quantite, prix)
-        self.view.printMSG("Lunette modifiee avec succes!")
+        self.view.printMSG("Modification enregistree")
 
 
-# GestionDeStockLUN Class
+
 class GestionDeStockLUN:
     def __init__(self):
         self.model = Model()
